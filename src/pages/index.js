@@ -77,7 +77,7 @@ const IndexPage = () => (
         loading="eager"
         width={64}
         quality={95}
-        formats={["auto", "webp", "avif"]}
+        formats={["auto", "webp"]}
         alt=""
         style={{ marginBottom: `var(--space-3)` }}
       />
