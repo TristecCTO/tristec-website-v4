@@ -24,7 +24,19 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ["auto", "webp"], // Only auto (original) and webp
+          quality: 50,
+        },
+        failOn: "warning", // Optional: makes it stricter about errors
+        useMozJpeg: false, // Optional: tweak image processing
+        stripMetadata: true, // Optional
+        avif: false // Explicitly disable AVIF (not standard, but worth a try)
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -37,4 +49,4 @@ module.exports = {
       },
     },
   ],
-}
+};
