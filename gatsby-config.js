@@ -28,9 +28,13 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          formats: ["auto", "webp"], // Explicitly exclude AVIF
+          formats: ["auto", "webp"], // Only auto (original) and webp
           quality: 50,
         },
+        failOn: "warning", // Optional: makes it stricter about errors
+        useMozJpeg: false, // Optional: tweak image processing
+        stripMetadata: true, // Optional
+        avif: false // Explicitly disable AVIF (not standard, but worth a try)
       },
     },
     {
@@ -41,7 +45,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`,
       },
     },
   ],
