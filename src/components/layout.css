@@ -222,3 +222,195 @@ pre tt:before,
 pre tt:after {
   content: none;
 }
+
+/* Tris added */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+
+/* Keep main as default block element */
+main {
+  display: block; /* This is actually the default, but added for clarity */
+}
+
+menu,
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+ /* no backgroud was background: #00b7eb; light blue was #444 */
+}
+/* More specific navigation link styles */
+.nav-link {
+  color: #00b7eb; /* light blue was #fff */
+  text-decoration: none;
+  padding: 10px 15px;
+}
+.nav-link:hover {
+  background: #00b7eb; /* light blue /* was #0057a7; dark blue was #555 */
+  color: #fff; /* white*/
+}
+.nav-link.active {
+  background: #00b7eb; /* light blue /* was #0057a7; dark blue was #555 */
+  color: #fff; /* white*/
+  font-weight: bold;
+}
+
+/* Burger Menu */
+.burger-menu {
+  position: fixed;
+  top: 30px; /* moved down from 20 to 30 with 40 max*/
+  right: 20px;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.burger-bar {
+  width: 100%;
+  height: 4px;
+  background: #0057a7; /* dark blue  was #333 */
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Transform burger into X when open */
+.burger-menu.open .burger-bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.open .burger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.open .burger-bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Fullscreen Menu */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.fullscreen-menu.open {
+  background: rgba(255, 255, 255, 1); /* Fully white when open */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Specific styling for fullscreen nav */
+.fullscreen-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+}
+
+/* Menu items animation */
+.fullscreen-nav .nav-link {
+  font-size: 2rem;
+  color: #00b7eb; /* light blue was #555 */
+  margin: 20px 0;
+  padding: 10px 15px;
+  background: transparent;
+  opacity: 0; /* Start invisible */
+}
+
+/* When menu is open, trigger animation for each link */
+.fullscreen-menu.open .fullscreen-nav .nav-link {
+  animation: floatIn 0.5s ease-out forwards;
+}
+
+/* Stagger the animation for each item */
+.fullscreen-menu.open .fullscreen-nav .nav-link:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.fullscreen-menu.open .fullscreen-nav .nav-link:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.fullscreen-menu.open .fullscreen-nav .nav-link:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.fullscreen-menu.open .fullscreen-nav .nav-link:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Float in animation */
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateX(75vw); /* Start at 3/4 of viewport width from right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at center */
+  }
+}
+
+.fullscreen-nav .nav-link:hover,
+.fullscreen-nav .nav-link.active {
+  background: #00b7eb; /* light blue was #ddd */
+  color: #fff; /* white was black */
+}
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+progress {
+  vertical-align: baseline;
+}
+
+
+  @media only screen and (max-width: 480px) {
+    html {
+      font-size: 100%;
+    }
+  }
+  /* this is mobile v desktop split */
+  /* turn off the split and just use burger menu when in dev by */
+  /* commenting out the section below */ 
+  
+  @media only screen and (max-width: 768px) { /* mobile */
+    nav {
+      display: none;
+    }
+    .burger-menu {
+      display: block;
+    }
+  }
+  /* this removes burger for desktop but retain at present to comment out section 
+  @media only screen and (min-width: 769px) { 
+    .burger-menu {
+      display: none;
+    }
+  }
+  */ 
