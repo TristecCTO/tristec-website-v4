@@ -24,7 +24,16 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ["auto", "webp"], // Exclude AVIF to prevent compression issues
+          quality: 80,
+          placeholder: "blurred",
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -41,3 +50,4 @@ module.exports = {
     },
   ],
 }
+
