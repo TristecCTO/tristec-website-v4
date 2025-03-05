@@ -5,6 +5,9 @@
 [build.environment]
   NODE_VERSION = "18.20.7"  # Use a specific Node version (e.g., 18 or 20)
 
+[[plugins]]
+package = "netlify-plugin-gatsby-cache"
+
 [functions]
   external_node_modules = ["sharp"]
   included_files = ["node_modules/sharp/**/*", "lib/**/*"]
