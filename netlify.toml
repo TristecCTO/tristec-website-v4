@@ -4,3 +4,6 @@
 
 [build.environment]
   NODE_VERSION = "18.20.7"  # Use a specific Node version (e.g., 18 or 20)
+
+[functions]
+  external_node_modules = ["sharp"]

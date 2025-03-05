@@ -34,7 +34,6 @@ module.exports = {
         failOn: "warning", // Optional: makes it stricter about errors
         useMozJpeg: false, // Optional: tweak image processing
         stripMetadata: true, // Optional
-        avif: false // Explicitly disable AVIF (not standard, but worth a try)
       },
     },
     {
