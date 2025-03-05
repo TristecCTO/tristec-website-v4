@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --platform=linux --arch=x64 sharp  && gatsby build"
+  command = "command = "npm install --ignore-scripts=false --foreground-scripts --verbose sharp && gatsby build"  && gatsby build"
   publish = "public"
 
 [build.environment]
