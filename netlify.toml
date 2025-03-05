@@ -1,11 +1,6 @@
 [build]
-  command = "npm install --platform=linux --arch=x64 sharp -D netlify-plugin-system-packages && gatsby build"
+  command = "npm install --platform=linux --arch=x64 sharp  && gatsby build"
   publish = "public"
 
 [build.environment]
   NODE_VERSION = "18.20.7"  # Use a specific Node version (e.g., 18 or 20)
-
-  [[plugins]]
-  package = "netlify-plugin-system-packages"
-  [plugins.inputs]
-    packages = ["libvips-dev"]
