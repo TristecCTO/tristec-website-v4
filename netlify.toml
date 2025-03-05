@@ -1,6 +1,5 @@
 [build]
-  command = "npm install --platform=linux --arch=x64 sharp && gatsby build"
-  command = "npm install -D netlify-plugin-system-packages"
+  command = "npm install --platform=linux --arch=x64 sharp -D netlify-plugin-system-packages && gatsby build"
   publish = "public"
 
 [build.environment]
