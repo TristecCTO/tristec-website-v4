@@ -1,5 +1,5 @@
 [build]
-  command = "npm uninstall sharp && npm install --platform=linux --arch=x64 --verbose sharp && gatsby build"
+  command = "npm uninstall sharp && npm install --platform=linux --arch=x64 --ignore-scripts sharp && gatsby build"
   publish = "public"
 
 [build.environment]
